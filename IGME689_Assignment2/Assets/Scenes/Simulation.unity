@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 691487414}
   - component: {fileID: 691487413}
   - component: {fileID: 691487412}
+  - component: {fileID: 691487415}
+  - component: {fileID: 691487416}
   m_Layer: 0
   m_Name: ArcGISMap
   m_TagString: Untagged
@@ -292,6 +294,43 @@ Transform:
   - {fileID: 887639006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &691487415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691487411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b8e1bb9726bc64e984e2d1c7deeeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcGISMap: {fileID: 691487412}
+  rainPrefab: {fileID: 2505841678796714552, guid: adb9f6a15fafa374a900fc36521be65a, type: 3}
+  spawnHeight: 200
+  latitude: 40.7128
+  longitude: -74.006
+  apiKey: 
+  year: 2023
+  month: 7
+  day: 21
+  hour: 15
+--- !u!114 &691487416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691487411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a7909a1d3ebae49a1a16de14f3b003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcGISMap: {fileID: 691487412}
+  geoJsonUrl: https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1=1&f=geojson
+  prefab: {fileID: 8486554530972913926, guid: 505527544c6005d4b9e795da6b336d9a, type: 3}
 --- !u!1 &887639003
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,8 +420,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887639003}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5993419, y: 0.043887533, z: -0.03294116, w: 0.7986101}
-  m_LocalPosition: {x: -46.597515, y: 1461.5659, z: -422.7529}
+  m_LocalRotation: {x: 0.6605612, y: 0.03295302, z: -0.028771544, w: 0.74949664}
+  m_LocalPosition: {x: -6388.3784, y: 15558.296, z: -7247.8486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -540,18 +579,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position:
-    X: -122.57023115408742
-    Y: 38.103592237021935
-    Z: 1461.5801043674292
+    X: -122.64229851783362
+    Y: 38.042239794151854
+    Z: 15565.602965472362
     SRWkid: 4326
     SpatialReference:
       WKID: 4326
       VerticalWKID: 0
     version: 1
   rotation:
-    Heading: 6.28963491988013
-    Pitch: 16.221111150845218
-    Roll: 359.9985658737934
+    Heading: 4.746435773868794
+    Pitch: 7.14961795392594
+    Roll: 359.77500004844137
   surfacePlacementMode: 0
   surfacePlacementOffset: 0
   version: 1
@@ -589,89 +628,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsInitialized: 1
   m_LocalPosition:
-    x: -2705926.58030093
-    y: 3915400.405133717
-    z: -4235986.774546128
+    x: -2719509.6225589137
+    y: 3918729.6630033287
+    z: -4245470.176221122
   m_LocalRotation:
     value:
-      x: -0.16822214
-      y: -0.29894695
-      z: 0.100006856
-      w: -0.9339864
+      x: -0.24408159
+      y: -0.2863872
+      z: 0.11327776
+      w: -0.9195514
   m_LocalScale:
     x: 1
     y: 1
     z: 1
---- !u!1 &1156310042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1156310044}
-  - component: {fileID: 1156310043}
-  - component: {fileID: 1156310045}
-  m_Layer: 0
-  m_Name: Weather
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1156310043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156310042}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b8e1bb9726bc64e984e2d1c7deeeaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arcGISMap: {fileID: 691487412}
-  rainPrefab: {fileID: 2505841678796714552, guid: adb9f6a15fafa374a900fc36521be65a, type: 3}
-  spawnHeight: 50
-  latitude: 40.7128
-  longitude: -74.006
-  apiKey: 2774e392ae40edc491c8b34071231687
-  year: 2023
-  month: 7
-  day: 21
-  hour: 15
---- !u!4 &1156310044
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156310042}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7190.4126, y: -0.00003, z: 881.7146}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1156310045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156310042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3faff1ffae1e340b2ef55dd9cc77c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arcGISMap: {fileID: 691487412}
-  geoJsonUrl: https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1=1&f=geojson
-  prefab: {fileID: 8486554530972913926, guid: 505527544c6005d4b9e795da6b336d9a, type: 3}
 --- !u!1 &1211358313
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,4 +887,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 1211358315}
   - {fileID: 691487414}
-  - {fileID: 1156310044}

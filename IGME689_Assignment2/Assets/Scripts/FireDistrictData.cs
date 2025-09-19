@@ -1,4 +1,4 @@
-﻿using SimpleJSON; // Make sure this is imported
+using SimpleJSON; // Make sure this is imported
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -7,7 +7,7 @@ using Esri.GameEngine.Geometry;
 using Esri.ArcGISMapsSDK.Utils.GeoCoord;
 using Unity.Mathematics;
 
-public class FireData : MonoBehaviour
+public class FireDistrictData : MonoBehaviour
 {
     public ArcGISMapComponent arcGISMap;
     public string geoJsonUrl = "https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1=1&f=geojson";
@@ -36,29 +36,26 @@ public class FireData : MonoBehaviour
         {
             var coordinates = feature["geometry"]["coordinates"][0];
 
-            //Debug.Log(coordinates);
+            Debug.Log(coordinates);
             float baseLon = coordinates[0][0];
             float baseLat = coordinates[0][1];
 
             //Debug.Log(baseLon); 
             //Debug.Log(baseLat);
 
-            /*            foreach (JSONNode point in coordinates)
-                        {
-                            float lon = point[0];
-                            float lat = point[1];
+            foreach (JSONNode perimeterPoint in coordinates)
+            {
+                float lon = perimeterPoint[0];
+                float lat = perimeterPoint[1];
+                Debug.Log(lon);
 
-                            // Simple conversion: lon -> X, lat -> Z
-                            Vector3 pos = new Vector3(lon - baseLon, 0, lat - baseLat);
-                            //Debug.Log(pos);
+                ArcGISPoint point = new ArcGISPoint(lon, lat, 0, ArcGISSpatialReference.WGS84());
+                GameObject newPoint = Instantiate(prefab, transform);
+                newPoint.GetComponent<ArcGISLocationComponent>().Position = point;
+                newPoint.GetComponent<ArcGISLocationComponent>().Rotation = new ArcGISRotation(0, 90, 0);
+            }
 
-                            if (prefab != null)
-                                Instantiate(prefab, pos, Quaternion.identity);
-                        }*/
-
-            ArcGISPoint point = new ArcGISPoint(baseLon, baseLat, 0, ArcGISSpatialReference.WGS84());
-            double3 spawnPoint = arcGISMap.View.GeographicToWorld(point);
-            Instantiate(prefab, new Vector3((float)spawnPoint.x, (float)spawnPoint.y, 0), quaternion.identity);
+            
         }
     }
 }
