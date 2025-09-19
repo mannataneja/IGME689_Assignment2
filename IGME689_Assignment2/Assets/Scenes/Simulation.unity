@@ -207,9 +207,9 @@ MonoBehaviour:
       IsEnabled: 0
       Polygons: []
       Type: 0
-  - Name: P
+  - Name: Fire
     Type: 0
-    Source: https://www.arcgis.com/sharing/rest/content/items/bdbdcf7b5f6c4aa288fa8ff0821321a9/data
+    Source: https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1%3D1&f=geojson
     Opacity: 1
     IsVisible: 1
     Authentication:
@@ -230,8 +230,8 @@ MonoBehaviour:
       Polygons: []
       Type: 0
   originPosition:
-    X: -74.06
-    Y: 40.7128
+    X: -122.5697
+    Y: 38.1074
     Z: 0
     SRWkid: 4326
     SpatialReference:
@@ -247,7 +247,7 @@ MonoBehaviour:
   configurations: []
   oauthUserConfigurations: []
   version: 4
-  dataFetchWithSceneView: 0
+  dataFetchWithSceneView: 1
   editorModeEnabled: 1
   rebaseWithSceneView: 0
   RootChanged:
@@ -267,15 +267,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocalPosition:
-    x: 1329611.5304007835
-    y: 4138300.2386952764
-    z: -4655300.039461424
+    x: -2705127.7675992325
+    y: 3914831.063360851
+    z: -4234822.809606071
   m_LocalRotation:
     value:
-      x: -0.41294494
-      y: -0.1260258
-      z: -0.057815157
-      w: 0.90013963
+      x: -0.41997468
+      y: 0.25214854
+      z: 0.12268866
+      w: 0.86312795
 --- !u!4 &691487414
 Transform:
   m_ObjectHideFlags: 0
@@ -381,8 +381,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887639003}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12309247, y: 0.71441233, z: -0.12999985, w: 0.67643434}
-  m_LocalPosition: {x: 2303.157, y: 1041.3458, z: -170.63193}
+  m_LocalRotation: {x: 0.5993419, y: 0.043887533, z: -0.03294116, w: 0.7986101}
+  m_LocalPosition: {x: -46.597515, y: 1461.5659, z: -422.7529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -540,18 +540,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position:
-    X: -74.03274855876889
-    Y: 40.71126047987118
-    Z: 1041.7632903129786
+    X: -122.57023115408742
+    Y: 38.103592237021935
+    Z: 1461.5801043674292
     SRWkid: 4326
     SpatialReference:
       WKID: 4326
       VerticalWKID: 0
     version: 1
   rotation:
-    Heading: 93.1461834117867
-    Pitch: 69.394187946611
-    Roll: 0.0006946502424580559
+    Heading: 6.28963491988013
+    Pitch: 16.221111150845218
+    Roll: 359.9985658737934
   surfacePlacementMode: 0
   surfacePlacementOffset: 0
   version: 1
@@ -571,9 +571,9 @@ MonoBehaviour:
   UpdateClippingPlanes: 1
   UseCameraViewportProperties: 1
   verticalFov: 60
-  horizontalFov: 136.66925
-  viewportSizeX: 1465
-  viewportSizeY: 336
+  horizontalFov: 103.06947
+  viewportSizeX: 1101
+  viewportSizeY: 505
   qualityScalingFactor: 1
 --- !u!114 &887639010
 MonoBehaviour:
@@ -589,15 +589,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsInitialized: 1
   m_LocalPosition:
-    x: 1332073.4700304414
-    y: 4138850.137963978
-    z: -4655533.518880488
+    x: -2705926.58030093
+    y: 3915400.405133717
+    z: -4235986.774546128
   m_LocalRotation:
     value:
-      x: -0.11084256
-      y: 0.49702322
-      z: -0.43562627
-      w: 0.7422342
+      x: -0.16822214
+      y: -0.29894695
+      z: 0.100006856
+      w: -0.9339864
   m_LocalScale:
     x: 1
     y: 1
@@ -612,6 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156310044}
   - component: {fileID: 1156310043}
+  - component: {fileID: 1156310045}
   m_Layer: 0
   m_Name: Weather
   m_TagString: Untagged
@@ -626,7 +627,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156310042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4b8e1bb9726bc64e984e2d1c7deeeaf, type: 3}
   m_Name: 
@@ -656,6 +657,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1156310045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156310042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3faff1ffae1e340b2ef55dd9cc77c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcGISMap: {fileID: 691487412}
+  geoJsonUrl: https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1=1&f=geojson
+  prefab: {fileID: 8486554530972913926, guid: 505527544c6005d4b9e795da6b336d9a, type: 3}
 --- !u!1 &1211358313
 GameObject:
   m_ObjectHideFlags: 0
