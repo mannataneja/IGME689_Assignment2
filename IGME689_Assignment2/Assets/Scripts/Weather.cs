@@ -17,7 +17,7 @@ public class Weather : MonoBehaviour
     public double longitude = -74.0060;
 
     [Header("OpenWeatherMap")]
-    public string apiKey;
+    public string apiKey = "2774e392ae40edc491c8b34071231687";
 
     [Header("Historical Test Settings")]
     public int year = 2023;
@@ -44,6 +44,11 @@ public class Weather : MonoBehaviour
         TestingRain();
 
         
+    }
+    public void CallWeatherAPI()
+    {
+        StopCoroutine(UpdateWeather());
+        StartCoroutine(UpdateWeather());
     }
 
     double3 GeoToUnityPosition(double lat, double lon, float height)
