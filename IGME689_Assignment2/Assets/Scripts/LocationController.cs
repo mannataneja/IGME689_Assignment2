@@ -14,30 +14,21 @@ public class LocationController : MonoBehaviour
     void Start()
     {
         currentLocationIndex = 0;
+        SetLocationFromIndex(0);
     }
 
-    // Update is called once per frame
-/*    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            GoToNextLocation();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-
-        }
-    }*/
     public void GoToNextLocation()
     {
-        // Make sure the current location index loops back to the start after the last location has been visited
         currentLocationIndex = (currentLocationIndex + 1) % firemanager.locations.Count;
         SetLocationFromIndex(currentLocationIndex);
     }
     public void GoToPrevioustLocation()
     {
-        // Make sure the current location index loops back to the start after the last location has been visited
-        currentLocationIndex = (currentLocationIndex - 1) % firemanager.locations.Count;
+        currentLocationIndex = (currentLocationIndex - 1);
+        if(currentLocationIndex < 0)
+        {
+            currentLocationIndex = firemanager.locations.Count - 1;
+        }
         SetLocationFromIndex(currentLocationIndex);
     }
     private void SetLocationFromIndex(int index)
