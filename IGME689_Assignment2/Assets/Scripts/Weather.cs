@@ -10,7 +10,6 @@ using TMPro;
 public class Weather : MonoBehaviour
 {
     public ArcGISMapComponent arcGISMap;
-    public FireDistrictData fireManager;
 
     public GameObject rainPrefab;
     public float spawnHeight = 200f;
