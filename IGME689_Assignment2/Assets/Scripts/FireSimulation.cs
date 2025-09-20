@@ -76,4 +76,20 @@ public class FireSimulation : MonoBehaviour
             activeFirePositions = newPositions;
         }
     }
+    public void IncreaseSpeed()
+    {
+        if(spreadInterval >= 10)
+        {
+            spreadInterval -= 5;
+        }
+        StopCoroutine(FireSpreadLoop());
+        StartCoroutine(FireSpreadLoop());
+    }
+    public void DecreaseSpeed()
+    {
+        if(spreadInterval <= 55)
+        {
+            spreadInterval += 5;
+        }
+    }
 }
