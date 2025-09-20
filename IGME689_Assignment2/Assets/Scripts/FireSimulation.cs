@@ -9,11 +9,10 @@ using Esri.ArcGISMapsSDK.Utils.GeoCoord;
 public class FireSimulation : MonoBehaviour
 {
     [Header("Settings")]
-    public GameObject firePrefab;        // Prefab representing fire
-    //public List<GameObject> districtPrefabs; // District prefabs from FireDistrictData
-    public double2 fireStartLatLon;      // Lat, Lon to start fire
-    public float spreadSpeed = 0.0005f;  // Degrees per second (latitude/longitude units)
-    public float boundarySlowFactor = 0.3f; // How much fire slows at district boundary
+    public GameObject firePrefab;        
+    public double2 fireStartLatLon;      
+    public float spreadSpeed = 0.0005f;  
+    public float boundarySlowFactor = 0.3f; 
     public float spreadInterval = 30f;
     public bool slow = false;
 
@@ -21,7 +20,6 @@ public class FireSimulation : MonoBehaviour
 
     void Start()
     {
-        // Convert start lat/lon to ArcGIS world position
         ArcGISPoint startPoint = new ArcGISPoint(fireStartLatLon.x, fireStartLatLon.y, 0, ArcGISSpatialReference.WGS84());
         activeFirePositions.Add(startPoint);
 
@@ -64,7 +62,6 @@ public class FireSimulation : MonoBehaviour
                         spreadInterval += 20f;
                     }
 
-                    // Convert back to Unity position
                     ArcGISPoint newPoint = new ArcGISPoint(newLon, newLat, 0, ArcGISSpatialReference.WGS84());
 
                     // Spawn fire prefab at new position
