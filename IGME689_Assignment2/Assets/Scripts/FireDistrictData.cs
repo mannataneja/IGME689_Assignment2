@@ -15,6 +15,7 @@ public class FireDistrictData : MonoBehaviour
     public string geoJsonUrl = "https://services3.arcgis.com/dkpOfuz3lCHMxq7I/arcgis/rest/services/Fire_Districts/FeatureServer/4/query?outFields=*&where=1=1&f=geojson";
     public GameObject prefab; // prefab to spawn
     public List<double2> locations = new List<double2>();
+
     void Start()
     {
         StartCoroutine(FetchAndSpawn());
